@@ -8,14 +8,18 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "/",
-      name: "home",
+      path: "",
       component: Home,
       children: [
         {
+          path: "/",
+          component: () =>
+            import(/* webpackChunckName = "index" */ "@/views/Index.vue")
+        },
+        {
           path: "/category/all",
-          name: "categoryAll",
-          component: () => import("@/views/AllCategoryTag.vue")
+          component: () =>
+            import(/* webpackChunckName = "allCategoryTag" */ "@/views/AllCategoryTag.vue")
         }
       ]
     }

@@ -12,8 +12,19 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
   	// 端口
-  	port: 8080
+  	port: 8080,
+    proxy: {
+  	  "/api": {
+  	    target: "http://10.1.93.237:8888",
+        // ws: false, // 设置是否代理websocket
+        changeOrigin: true
+      }
+    }
+
   },
+
+
+
   configureWebpack: {
     name: projectName,
     resolve: {
