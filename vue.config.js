@@ -22,14 +22,13 @@ module.exports = {
     }
 
   },
-
-
-
   configureWebpack: {
     name: projectName,
     resolve: {
       alias: {
-        "@": resolve("src")
+        "@": resolve("src"),
+        // 添加本配置, 成功使用 vue-layer
+        "vue$": "vue/dist/vue.js"
       }
     }
   }

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Message } from "element-ui";
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
   timeout: 20 * 1000
@@ -21,11 +20,7 @@ service.interceptors.response.use(
     return Promise.resolve(res);
   },
   error => {
-    Message.warning({
-      message: "连接超时",
-      showClose: true,
-      center: true
-    });
+    this.$layer.msg("连接超时");
     return Promise.reject(error);
   }
 );

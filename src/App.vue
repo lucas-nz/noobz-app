@@ -4,21 +4,32 @@
   </div>
 </template>
 <style lang="scss">
-#app {
-  font-family: "Courier New", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body {
+  background-color: #f5f5f5;
+  font-weight: 400;
+  line-height: 1.5;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+a {
+  cursor: pointer;
+  text-decoration: none;
+  transition: none 86ms ease-out;
+}
+.me-area {
+  background-color: #fff;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  position: relative;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.me-card {
+  font-family: "Courier New", "Microsoft YaHei", sans-serif;
+  margin: 10px auto;
 }
 </style>

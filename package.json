@@ -1,6 +1,7 @@
 {
   "name": "noobz-app",
   "version": "0.1.0",
+  "author": "zsz1995",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -12,6 +13,7 @@
     "axios": "^0.18.0",
     "element-ui": "^2.8.2",
     "vue": "^2.6.10",
+    "vue-layer": "^0.9.13",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },

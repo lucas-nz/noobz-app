@@ -1,13 +1,13 @@
 <template>
   <div class="home">
     <el-container>
-      <el-header>
-        <base-header :activeIndex="activeIndex"></base-header>
-      </el-header>
-      <el-main>
-        <router-view />
+      <base-header :activeIndex="activeIndex"></base-header>
+      <el-main class="me-main">
+        <keep-alive>
+          <router-view />
+        </keep-alive>
       </el-main>
-      <base-footer v-show="showFooter"></base-footer>
+      <base-footer class="me-footer" v-show="showFooter"></base-footer>
     </el-container>
   </div>
 </template>
@@ -39,13 +39,14 @@ export default {
     });
   },
   beforeRouteUpdate(to, from, next) {
-    if (to.path === "/") {
-      this.showFooter = true;
-    } else {
-      this.showFooter = false;
-    }
+    this.showFooter = to.path === "/";
     this.activeIndex = to.path;
     next();
   }
 };
 </script>
+<style scoped>
+.me-main {
+  margin: 60px auto 140px auto;
+}
+</style>

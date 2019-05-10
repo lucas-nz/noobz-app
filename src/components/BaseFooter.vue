@@ -22,17 +22,14 @@ export default {
 };
 </script>
 
-<style>
-.el-footer {
+<style scoped>
+.me-footer {
   min-width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: 1024;
-}
-.me-footer {
   text-align: center;
-  line-height: 60px;
   font-family: "Courier New", sans-serif;
   font-size: 18px;
 }

@@ -1,68 +1,38 @@
 <template>
   <div>
-    <article-item
-      v-for="item in articles"
-      :item="item"
-      :key="item.id"
-    ></article-item>
+    <el-container>
+      <el-main>
+        <article-scroll></article-scroll>
+      </el-main>
+      <el-aside>
+        <card-me class="me-card"></card-me>
+        <card-tags></card-tags>
+      </el-aside>
+    </el-container>
   </div>
 </template>
 
 <script>
-import { getArticles } from "@/api/article";
-import ArticleItem from "@/components/ArticleItem.vue";
+import ArticleScroll from "@/components/ArticleScroll";
+import CardMe from "@/components/card/CardMe";
+import CardTags from "@/components/card/CardTags";
 export default {
-  name: "Index",
-  components: {
-    ArticleItem
-  },
-  props: {
-    offset: {
-      type: Number,
-      default: 100
-    },
-    page: {
-      type: Object,
-      default() {
-        return {};
-      }
-    },
-    query: {
-      type: Object,
-      default() {
-        return {};
-      }
-    }
-  },
   data() {
-    return {
-      loading: false,
-      noData: false,
-      innerPage: {
-        pageSize: 5,
-        pageNumber: 1,
-        name: "a.createDate",
-        sort: "desc"
-      },
-      articles: []
-    };
+    return {};
   },
-  created() {
-    this.listArticles();
-  },
-  methods: {
-    listArticles() {
-      let that = this;
-      that.loading = true;
-      getArticles(that.query, that.innerPage).then(data => {
-        let newArticles = data.data;
-        if (newArticles && newArticles.length > 0) {
-          that.articles = that.articles.concat(newArticles);
-        } else {
-          that.noData = true;
-        }
-      });
-    }
+  components: {
+    ArticleScroll,
+    CardMe,
+    CardTags
   }
 };
 </script>
+<style scoped>
+.el-aside {
+  width: 300px;
+  margin-left: 30px;
+}
+.el-main {
+  padding: 0 20px;
+}
+</style>
