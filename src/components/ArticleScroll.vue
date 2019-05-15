@@ -42,7 +42,7 @@ export default {
     return {
       loading: false,
       noData: false,
-      offset: 250,
+      offset: 200,
       noDataTip: "下拉加载更多",
       noDataIconClass: "el-icon-bottom",
       innerPage: {
@@ -101,6 +101,8 @@ export default {
             message: "文章加载失败.",
             showClose: true
           });
+          that.noDataTip = "没有更多了";
+          that.noDataIconClass = "el-icon-ice-cream-round";
         })
         .finally(() => {
           that.loading = false;

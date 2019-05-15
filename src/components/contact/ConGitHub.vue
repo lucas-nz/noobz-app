@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       loading: true,
-      name: "zsz1995",
+      name: "",
       avatar: "",
       url: ""
     };
@@ -26,6 +26,7 @@ export default {
     MyImg
   },
   created() {
+    this.name = process.env.VUE_APP_GITHUB_ACCOUNT;
     this.getGitHubInfo();
   },
   methods: {

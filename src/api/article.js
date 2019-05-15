@@ -2,7 +2,7 @@ import request from "@/request";
 
 export function getArticles(query, page) {
   return request({
-    url: "articles",
+    url: "/articles",
     method: "get",
     params: {
       pageNumber: page.pageNumber,
@@ -14,5 +14,26 @@ export function getArticles(query, page) {
       tagId: query.tagId,
       categoryId: query.categoryId
     }
+  });
+}
+
+export function listArchives() {
+  return request({
+    url: "/articles/listArchives",
+    method: "get"
+  });
+}
+
+export function listHotArticles() {
+  return request({
+    url: "/articles/hot",
+    method: "get"
+  });
+}
+
+export function listNewArticles() {
+  return request({
+    url: "/articles/new",
+    method: "get"
   });
 }

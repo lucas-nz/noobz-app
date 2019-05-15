@@ -24,13 +24,12 @@
 
 <script>
 import ConGitHub from "@/components/contact/ConGitHub";
-
 export default {
   data() {
     return {};
   },
   components: {
-    ConGitHub
+    ConGitHub,
   },
   methods: {
     contactMe() {

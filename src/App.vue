@@ -28,8 +28,11 @@ body {
   padding: 0;
   margin: 0;
 }
-.me-card {
+.el-card {
   font-family: "Courier New", "Microsoft YaHei", sans-serif;
   margin: 10px auto;
+}
+.me-pull-right {
+  float: right;
 }
 </style>

@@ -6,12 +6,14 @@ function resolve(dir) {
 const projectName = require("./package.json").name;
 module.exports = {
   // 关闭eslint校验
-  lintOnSave: true,
+  lintOnSave: false,
   publicPath: "/",
   outputDir: "dist",
   productionSourceMap: false,
   devServer: {
   	// 端口
+    historyApiFallback: true,
+    noInfo: true,
   	port: 8080,
     proxy: {
   	  "/api": {

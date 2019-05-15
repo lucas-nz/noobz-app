@@ -20,7 +20,7 @@ export default {
   name: "home",
   components: {
     BaseHeader,
-    BaseFooter
+    BaseFooter,
   },
   data() {
     return {
@@ -47,6 +47,6 @@ export default {
 </script>
 <style scoped>
 .me-main {
-  margin: 60px auto 140px auto;
+  margin: 80px auto 140px auto;
 }
 </style>

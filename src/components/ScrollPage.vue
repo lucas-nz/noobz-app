@@ -1,5 +1,5 @@
 <template>
-  <div ref="scroll" id="scroll-page">
+  <div ref="scroll" id="scroll-page" class="me">
     <slot></slot>
     <div
       v-loading="loading"
@@ -7,7 +7,9 @@
       element-loading-text="拼命加载中..."
       element-loading-spinner="el-icon-loading"
     ></div>
-    <el-divider><i :class="noDataIconClass"></i>{{ noDataTip }}</el-divider>
+    <el-divider v-if="!loading">
+      <i :class="noDataIconClass">{{ noDataTip }}</i>
+    </el-divider>
   </div>
 </template>
 
@@ -62,3 +64,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.el-divider__text {
+  background-color: #f5f5f5;
+}
+</style>

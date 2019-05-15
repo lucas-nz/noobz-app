@@ -11,15 +11,15 @@
         置顶
       </el-button>
       <span class="me-pull-right me-article-icon">
-        <i class="el-icon-s-comment"> &nbsp;{{ commentCounts }}</i>
+        <i class="me-pull-right icon-comment"> &nbsp;{{ commentCounts }}</i>
       </span>
       <span class="me-pull-right me-article-icon">
-        <i class="el-icon-view">&nbsp;{{ viewCounts }}</i>
+        <i class="icon-fire">&nbsp;{{ viewCounts }}</i>
       </span>
     </div>
     <div class="me-article-description">&nbsp;&nbsp;{{ summary }}</div>
     <div>
-      <i class="el-icon-user me-article-icon">&nbsp;{{ author.nickname }}</i>
+      <i class="icon-user me-article-icon">&nbsp;{{ author.nickname }}</i>
       <el-tag
         v-for="tag in tags"
         :key="tag.tagname"
@@ -30,8 +30,8 @@
       >
         {{ tag.tagname }}
       </el-tag>
-      <i class="el-icon-time me-pull-right me-article-icon">
-        {{ createDate }}
+      <i class="icon-time-circle me-pull-right me-article-icon">
+        {{ createDate | format }}
       </i>
     </div>
   </el-card>
@@ -68,17 +68,8 @@ export default {
 };
 </script>
 <style>
-.me-card {
-  font-family: "Courier New", "Microsoft YaHei", sans-serif;
-  margin: 10px auto;
-}
-
 .me-article-title {
   font-weight: 600;
-}
-
-.me-pull-right {
-  float: right;
 }
 
 .me-article-icon {
@@ -86,6 +77,7 @@ export default {
   margin-left: 10px;
   font-family: "Times New Roman", sans-serif;
   font-size: small;
+  max-height: 16px;
 }
 
 .me-article-description {

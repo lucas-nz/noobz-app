@@ -5,7 +5,6 @@
         :router="true"
         :default-active="activeIndex"
         menu-trigger="click"
-        active-text-color="#409EFF"
         mode="horizontal"
       >
         <el-menu-item index="/">首页</el-menu-item>
