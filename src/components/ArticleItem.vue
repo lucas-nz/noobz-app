@@ -1,7 +1,9 @@
 <template>
   <el-card shadow="hover" :body-style="{ padding: '16px' }" class="me-card">
     <div>
-      <a @click="view(id)" class="me-article-title">{{ title }}</a>
+      <el-link :underline="false" class="me-article-title" @click="view(id)">
+        {{ title }}
+      </el-link>
       <el-button
         v-if="weight > 0"
         circle
@@ -55,9 +57,7 @@ export default {
   },
   methods: {
     view(id) {
-      this.$router.push({
-        path: `/article/${id}`
-      });
+      this.$router.push(`/article/${id}`);
     },
     tagView(tagname) {
       this.$router.push({
@@ -70,12 +70,12 @@ export default {
 <style>
 .me-article-title {
   font-weight: 600;
+  font-size: larger;
 }
 
 .me-article-icon {
   color: #b0b0b0;
   margin-left: 10px;
-  font-family: "Times New Roman", sans-serif;
   font-size: small;
   max-height: 16px;
 }

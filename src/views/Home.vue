@@ -3,9 +3,7 @@
     <el-container>
       <base-header :activeIndex="activeIndex"></base-header>
       <el-main class="me-main">
-        <keep-alive>
-          <router-view />
-        </keep-alive>
+        <router-view />
       </el-main>
       <base-footer class="me-footer" v-show="showFooter"></base-footer>
     </el-container>
@@ -15,12 +13,11 @@
 <script>
 import BaseHeader from "@/components/BaseHeader.vue";
 import BaseFooter from "@/components/BaseFooter.vue";
-
 export default {
   name: "home",
   components: {
     BaseHeader,
-    BaseFooter,
+    BaseFooter
   },
   data() {
     return {

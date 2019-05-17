@@ -29,7 +29,7 @@ export default {
     return {};
   },
   components: {
-    ConGitHub,
+    ConGitHub
   },
   methods: {
     contactMe() {

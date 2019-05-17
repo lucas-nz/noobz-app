@@ -6,7 +6,7 @@ function resolve(dir) {
 const projectName = require("./package.json").name;
 module.exports = {
   // 关闭eslint校验
-  lintOnSave: false,
+  lintOnSave: true,
   publicPath: "/",
   outputDir: "dist",
   productionSourceMap: false,
@@ -14,6 +14,7 @@ module.exports = {
   	// 端口
     historyApiFallback: true,
     noInfo: true,
+    host: "zpig.cn",
   	port: 8080,
     proxy: {
   	  "/api": {

@@ -37,3 +37,10 @@ export function listNewArticles() {
     method: "get"
   });
 }
+
+export function viewArticle(id) {
+  return request({
+    url: `/articles/view/${id}`,
+    method: "get"
+  });
+}

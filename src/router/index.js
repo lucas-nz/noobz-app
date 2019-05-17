@@ -29,6 +29,11 @@ export default new Router({
           path: "/:type/all",
           component: () =>
             import(/* webpackChunckName = "allCategoryTag" */ "@/views/AllCategoryTag.vue")
+        },
+        {
+          path: "/article/:id",
+          component: () =>
+            import(/* webpackChunckName = "articleView" */ "@/views/ArticleView.vue")
         }
       ]
     }

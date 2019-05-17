@@ -3,7 +3,7 @@
     <slot></slot>
     <div
       v-loading="loading"
-      style="height: 40px;"
+      class="me-loading"
       element-loading-text="拼命加载中..."
       element-loading-spinner="el-icon-loading"
     ></div>
@@ -67,5 +67,8 @@ export default {
 <style scoped>
 .el-divider__text {
   background-color: #f5f5f5;
+}
+.me-loading {
+  height: 40px;
 }
 </style>

@@ -5,11 +5,12 @@ export default new Vuex.Store({
   state: {
     id: "",
     account: "",
-    token: ""
+    token: "",
+    avatar: ""
   },
   mutations: {
     SET_TOKEN: (state, token) => {
       state.token = token;
     }
   }
-})
+});

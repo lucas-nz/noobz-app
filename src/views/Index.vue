@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-title data-title="首页 -- noobz">
     <el-container class="me-container">
       <el-main>
         <article-scroll></article-scroll>
@@ -22,7 +22,6 @@
     </el-container>
   </div>
 </template>
-
 <script>
 import ArticleScroll from "@/components/ArticleScroll";
 import CardMe from "@/components/card/CardMe";
@@ -30,8 +29,6 @@ import CardTags from "@/components/card/CardTags";
 import CardArchive from "@/components/card/CardArchive";
 import CardArticle from "@/components/card/CardArticle";
 import { listArchives, listHotArticles, listNewArticles } from "../api/article";
-
-
 export default {
   data() {
     return {

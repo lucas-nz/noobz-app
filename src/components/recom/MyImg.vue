@@ -4,25 +4,31 @@
       <div class="el-image__placeholder"></div>
     </slot>
     <slot v-else-if="error" name="error">
-      <div class="el-image__error">{{ t('el.image.error') }}</div>
+      <div class="el-image__error">{{ t("el.image.error") }}</div>
     </slot>
     <img
-    v-else
-    class="el-image__inner"
-    :src="src"
-    :alt="alt"
-    :style="{ 'object-fit': fit, 'border-radius': radius}">
+      v-else
+      class="el-image__inner"
+      :src="src"
+      :alt="alt"
+      :style="{ 'object-fit': fit, 'border-radius': radius }"
+    />
   </div>
 </template>
 
 <script>
-import Locale from 'element-ui/src/mixins/locale';
-import { on, off, getScrollContainer, isInContainer } from 'element-ui/src/utils/dom';
-import { isString, isHtmlElement } from 'element-ui/src/utils/types';
-import throttle from 'throttle-debounce/throttle';
+import Locale from "element-ui/src/mixins/locale";
+import {
+  on,
+  off,
+  getScrollContainer,
+  isInContainer
+} from "element-ui/src/utils/dom";
+import { isString, isHtmlElement } from "element-ui/src/utils/types";
+import throttle from "throttle-debounce/throttle";
 
 export default {
-  name: 'MYImage',
+  name: "MYImage",
 
   mixins: [Locale],
 
@@ -76,12 +82,12 @@ export default {
     },
     handleLoad(e) {
       this.loading = false;
-      this.$emit('load', e);
+      this.$emit("load", e);
     },
     handleError(e) {
       this.loading = false;
       this.error = true;
-      this.$emit('error', e);
+      this.$emit("error", e);
     },
     handleLazyLoad() {
       if (isInContainer(this.$el, this._scrollContainer)) {
@@ -106,7 +112,7 @@ export default {
       if (_scrollContainer) {
         this._scrollContainer = _scrollContainer;
         this._lazyLoadHandler = throttle(200, this.handleLazyLoad);
-        on(_scrollContainer, 'scroll', this._lazyLoadHandler);
+        on(_scrollContainer, "scroll", this._lazyLoadHandler);
         this.handleLazyLoad();
       }
     },
@@ -115,7 +121,7 @@ export default {
 
       if (this.$isServer || !_scrollContainer || !_lazyLoadHandler) return;
 
-      off(_scrollContainer, 'scroll', _lazyLoadHandler);
+      off(_scrollContainer, "scroll", _lazyLoadHandler);
       this._scrollContainer = null;
       this._lazyLoadHandler = null;
     }
